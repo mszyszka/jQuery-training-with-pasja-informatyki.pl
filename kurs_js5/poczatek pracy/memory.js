@@ -43,5 +43,6 @@ function revealCard(nr) {
     var obraz = "url(img/" + cards[nr] +")";
     $('#c'+nr).css('background-image', obraz);
     $('#c'+nr).addClass('cardActive');
+    $('#c'+nr).removeClass('card');
     
 }

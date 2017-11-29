@@ -33,6 +33,19 @@ c11.addEventListener("click", function(){ revealCard(11); });
 
 var oneVisible = falese;
 var turnCounter = 0;
+
 function revealCard(nr){
-    alert(nr);
+    
+    var picture = " url(img/" + cards[nr] + ") ";
+    
+    $("#c"+nr).css('background-image', picture);
+    
 }
+
+
+
+
+
+
+
+

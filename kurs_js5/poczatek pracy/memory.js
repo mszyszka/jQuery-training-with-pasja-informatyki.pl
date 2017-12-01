@@ -37,6 +37,9 @@ var visible_nr;
 
 function revealCard(nr){
     
+    var opacityValue = $("#c"+nr).css("opacity");
+    alert('Opacity'+ opacityValue);
+    
     var picture = " url(img/" + cards[nr] + ") ";
     
     $("#c"+nr).css('background-image', picture);
@@ -54,11 +57,14 @@ function revealCard(nr){
         
         if(cards[visible_nr] == cards[nr])
         {
-          alert("para");    
+          //alert("para");
+            
+            setTimeout(function(){ hide2cards(nr, visible_nr) }, 750);
         }
         else 
         {
-          alert("pudło");    
+          //alert("pudło");
+            
         }
         
         
@@ -70,7 +76,11 @@ function revealCard(nr){
     
 }
 
-
+function hide2cards(nr1, nr2)
+{
+    $('#c'+nr1).css('opacity', '0');
+    $('#c'+nr2).css('opacity', '0');
+}
 
 
 

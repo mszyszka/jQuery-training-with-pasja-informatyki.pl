@@ -31,14 +31,42 @@ c9.addEventListener("click", function(){ revealCard(9); });
 c10.addEventListener("click", function(){ revealCard(10); });
 c11.addEventListener("click", function(){ revealCard(11); });
 
-var oneVisible = falese;
+var oneVisible = false;
 var turnCounter = 0;
+var visible_nr;
 
 function revealCard(nr){
     
     var picture = " url(img/" + cards[nr] + ") ";
     
     $("#c"+nr).css('background-image', picture);
+    $("#c"+nr).addClass('cardA');
+    $("#c"+nr).remove('card');
+    
+    
+    if (oneVisible == false)
+    {
+        oneVisible = true;
+        visible_nr = nr;
+    }
+    else
+    {
+        
+        if(cards[visible_nr] == cards[nr])
+        {
+          alert("para");    
+        }
+        else 
+        {
+          alert("pudło");    
+        }
+        
+        
+        turnCounter++;
+        $(".score").html('<p>Turn counter: ' + turnCounter + '</p>');
+        oneVisible = false;
+    }
+    
     
 }
 
